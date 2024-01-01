@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "lighthouse": "PORT=4444 start-server-and-test 'npm run preview' tcp:4444 'unlighthouse'",
+    "lighthouse:ci": "PORT=4444 start-server-and-test 'npm run preview' tcp:4444 'unlighthouse-ci'",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.0.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@unlighthouse/cli": "^0.10.4",
+    "autoprefixer": "^10.4.16",
+    "nuxt": "^3.9.0",
+    "nuxt-icon": "^0.6.8",
+    "postcss": "^8.4.32",
+    "start-server-and-test": "^2.0.3",
+    "tailwindcss": "^3.4.0",
+    "unlighthouse": "^0.10.4",
+    "vue": "^3.4.3",
+    "vue-router": "^4.2.5"
+  }
+}
