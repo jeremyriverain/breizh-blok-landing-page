@@ -1,14 +1,12 @@
 <template>
   <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-    <div class="p-24 md:order-1 hidden md:block">
+    <div class="md:order-1 hidden md:block">
       <img
-        class="rounded-full transition-transform transform hover:scale-125"
-        src="~/assets/img/hero.jpg"
+        src="~/assets/img/mockup-900.png"
         alt="Starship starts the engine"
         loading="eager"
-        format="avif"
-        width="512"
-        height="512"
+        width="600"
+        height="685"
       />
     </div>
 
@@ -26,7 +24,7 @@
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink
-          href="https://github.com/Gr33nW33n/nuxtship-template"
+          href="https://play.google.com/store/apps/details?id=fr.geekco.boulders&hl=en_ZA&gl=US"
           target="_blank"
           rel="noopener"
           >Télécharger sur Android</LandingLink
@@ -35,7 +33,7 @@
           size="lg"
           styleName="outline"
           rel="noopener"
-          href="https://github.com/Gr33nW33n/nuxtship-template"
+          href="https://apps.apple.com/fr/app/breizh-blok/id1616287447"
           target="_blank"
           >Télécharger sur iOS</LandingLink
         >

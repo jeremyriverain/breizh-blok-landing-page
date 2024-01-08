@@ -1,39 +1,39 @@
 <script setup>
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "3 modes de navigation",
     description:
-      "Build your site using Vue, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
-  },
-  {
-    title: "100% Static HTML, No JS",
-    description:
-      "Nuxt renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Nuxt can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Nuxt supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "pour parcourir le topo de différentes manières (en affichant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
     icon: "bx:bxs-bot",
   },
   {
-    title: "SEO Enabled",
+    title: "Carte intéractive",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Les blocs sont visibles sur une carte. En cliquant sur les marqueurs de position, on peut en voir le détail.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Des infos détaillées",
+    description:
+      "L'application comporte des vues détaillées de chaque commune, secteur et bloc. Chaque bloc comporte une photo et la ligne de bloc est matérialisée par un trait rouge.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Trier et filtrer les blocs",
+    description:
+      "Des critères de recherche permettent de regrouper les blocs par commune, secteur, niveau de difficulté. On peut aussi afficher les blocs les plus récents.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Accès hors-ligne (disponible prochainement)",
+    description:
+      "Téléchargez un secteur avant votre session et accédez ainsi au topo même quand la connexion internet est inexistante.",
     icon: "bx:bxs-file-find",
   },
   {
-    title: "Community",
+    title: "Vous voulez contribuer au topo ?",
     description:
-      "Nuxt is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "Vous faites régulièrement du bloc et vous aimeriez que certains blocs figurent sur le topo ? C'est possible. Pour cela, contactez-nous afin de devenir contributeur.",
     icon: "bx:bxs-user",
   },
 ];

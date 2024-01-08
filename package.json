@@ -7,7 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lighthouse": "PORT=4444 start-server-and-test 'npm run preview' tcp:4444 'unlighthouse'",
-    "lighthouse:ci": "PORT=4444 start-server-and-test 'npm run preview' tcp:4444 'unlighthouse-ci'",
+    "lighthouse:ci": "PORT=4444 start-server-and-test 'npm run preview' tcp:4444 'DEVICE=desktop npx unlighthouse-ci && DEVICE=mobile npx unlighthouse-ci'",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
