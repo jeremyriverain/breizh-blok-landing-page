@@ -3,7 +3,7 @@ const features = [
   {
     title: "3 modes de navigation",
     description:
-      "pour parcourir le topo de différentes manières (en affichant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
+      "pour découvrir le topo de différentes manières (en parcourant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
     icon: "bx:bxs-bot",
   },
   {
