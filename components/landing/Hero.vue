@@ -3,10 +3,12 @@
     <div class="md:order-1 hidden md:block">
       <img
         src="~/assets/img/mockup-900.png"
-        alt="Starship starts the engine"
+        alt="mockups de l'application"
         loading="eager"
         width="600"
         height="685"
+        srcset="~/assets/img/mockup-600.png 600w, ~/assets/img/mockup-900.png 900w, ~/assets/img/mockup-1200.png 1200W"
+        sizes="600"
       />
     </div>
 
