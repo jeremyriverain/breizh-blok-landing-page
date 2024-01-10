@@ -1,5 +1,5 @@
 <template>
-  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+  <main class="grid lg:grid-cols-2 place-items-center pt-12 pb-8 md:pt-8">
     <div class="md:order-1 hidden md:block">
       <img
         src="~/assets/img/mockup-900.png"
@@ -7,7 +7,11 @@
         loading="eager"
         width="600"
         height="685"
-        srcset="~/assets/img/mockup-600.png 600w, ~/assets/img/mockup-900.png 900w, ~/assets/img/mockup-1200.png 1200W"
+        srcset="
+          ~/assets/img/mockup-600.png   600w,
+          ~/assets/img/mockup-900.png   900w,
+          ~/assets/img/mockup-1200.png 1200w
+        "
         sizes="600"
       />
     </div>
