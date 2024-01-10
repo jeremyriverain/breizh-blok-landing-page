@@ -8,7 +8,6 @@ const open = ref(false);
       <div class="flex w-full lg:w-auto items-center justify-between">
         <NuxtLink href="/" class="text-lg">
           <img
-            class="rounded-full transition-transform transform hover:scale-125"
             src="~/assets/img/logo-200.png"
             alt="Logo Application Breizh Blok"
             loading="eager"
@@ -55,7 +54,9 @@ const open = ref(false);
       </nav>
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a href="/contribute">Contribuer au topo</a>
+          <LandingLink href="/contribute" styleName="muted"
+            >Contribuer au topo</LandingLink
+          >
         </div>
       </div>
     </header>

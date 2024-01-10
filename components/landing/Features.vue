@@ -3,7 +3,7 @@ const features = [
   {
     title: "3 modes de navigation",
     description:
-      "pour découvrir le topo de différentes manières (en parcourant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
+      "3 modes de navigation pour découvrir le topo de différentes manières (en parcourant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
     icon: "bx:bxs-bot",
   },
   {
@@ -46,7 +46,7 @@ const features = [
         <Icon class="text-white" :name="item.icon" />
       </div>
       <div>
-        <h3 class="font-semibold text-lg">{{ item.title }}</h3>
+        <h2 class="font-semibold text-lg">{{ item.title }}</h2>
         <p class="text-slate-500 mt-2 leading-relaxed">
           {{ item.description }}
         </p>

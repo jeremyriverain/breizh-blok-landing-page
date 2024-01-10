@@ -1,6 +1,6 @@
 # Breizh Blok Landing page
 
-See [Website](https://breizh-blok.geekco.fr)
+See [Website](https://breizh-blok.netlify.app/)
 
 Made with [Nuxt](https://nuxt.com/).
 
