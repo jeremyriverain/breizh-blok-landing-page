@@ -46,7 +46,12 @@ const open = ref(false);
       >
         <div class="lg:hidden flex items-center mt-3 gap-4">
           <div>
-            <LandingLink href="/contribute" styleName="muted" block size="md"
+            <LandingLink
+              href="/contribute"
+              styleName="muted"
+              block
+              size="md"
+              @click="open = !open"
               >Contribuer au topo</LandingLink
             >
           </div>
