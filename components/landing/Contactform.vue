@@ -1,134 +1,157 @@
-<script setup>
-onMounted(() => {
-  const form = document.getElementById("form");
-  const result = document.getElementById("result");
+<script setup lang="ts">
+import { useForm } from "vee-validate";
+import { object, string, type Asserts } from "yup";
+import nprogress from "nprogress";
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    form.classList.add("was-validated");
-    if (!form.checkValidity()) {
-      form.querySelectorAll(":invalid")[0].focus();
-      return;
-    }
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+const validationSchema = object({
+  firstName: string().required(),
+  name: string().required(),
+  email: string().required().email(),
+  message: string().required(),
+});
 
-    result.innerHTML = "Sending...";
+interface ContactForm extends Asserts<typeof validationSchema> {}
 
-    fetch("https://api.web3forms.com/submit", {
+const { defineField, errors, handleSubmit } = useForm({
+  validationSchema,
+});
+
+let submittedStatus: Ref<"error" | "success" | null> = ref(null);
+
+const [firstName, firstNameAttrs] = defineField("firstName");
+
+const [name, nameAttrs] = defineField("name");
+
+const [email, emailAttrs] = defineField("email");
+
+const [message, messageAttrs] = defineField("message");
+
+function encode(data: ContactForm) {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(
+          data[key as keyof ContactForm]
+        )}`
+    )
+    .join("&");
+}
+
+const onSubmit = handleSubmit(async (values, { resetForm }) => {
+  submittedStatus.value = null;
+  nprogress.start();
+
+  try {
+    const response = await $fetch("/contribute/", {
       method: "POST",
+      body: encode(values as ContactForm),
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: json,
-    })
-      .then(async (response) => {
-        let json = await response.json();
-        if (response.status == 200) {
-          result.classList.add("text-green-500");
-          result.innerHTML = json.message;
-        } else {
-          console.log(response);
-          result.classList.add("text-red-500");
-          result.innerHTML = json.message;
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        result.innerHTML = "Something went wrong!";
-      })
-      .then(function () {
-        form.reset();
-        form.classList.remove("was-validated");
-        setTimeout(() => {
-          result.style.display = "none";
-        }, 5000);
-      });
-  });
+    });
+    submittedStatus.value = "success";
+    resetForm();
+
+    window.scrollTo(0, 0);
+    console.log("response", response);
+  } catch (error) {
+    console.log(error);
+    submittedStatus.value = "error";
+  } finally {
+    nprogress.done();
+  }
 });
 </script>
 
 <template>
-  <!-- To make this contact form work, create your free access key from https://web3forms.com/
-     Then you will get all form submissions in your email inbox. -->
-  <form
-    action="https://api.web3forms.com/submit"
-    method="POST"
-    id="form"
-    class="needs-validation"
-    novalidate
+  <div
+    class="mb-5 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+    role="alert"
+    v-if="submittedStatus === 'error'"
   >
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-    <!-- Create your free access key from https://web3forms.com/ -->
-    <input
-      type="checkbox"
-      class="hidden"
-      style="display: none"
-      name="botcheck"
-    />
+    <span class="block sm:inline"
+      >Une erreur est survenue. Essayez à nouveau.</span
+    >
+  </div>
+
+  <div
+    class="mb-5 bg-green-100 border border-green-400 text-green-900 px-4 py-3 rounded relative"
+    role="alert"
+    v-if="submittedStatus === 'success'"
+  >
+    <span class="block sm:inline">Votre message a été envoyé.</span>
+  </div>
+
+  <form
+    id="contact-form"
+    novalidate
+    name="contact"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    @submit.prevent="onSubmit"
+    v-show="submittedStatus !== 'success'"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+
     <div class="mb-5">
+      <label for="first_name" class="sr-only">Prénom</label>
       <input
+        v-model="firstName"
+        v-bind="firstNameAttrs"
+        id="first_name"
         type="text"
-        placeholder="Nom complet"
-        required
+        placeholder="Prénom"
+        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        name="first name"
+      />
+      <div v-if="errors.firstName" class="text-red-400 text-sm mt-1">
+        Prénom obligatoire.
+      </div>
+    </div>
+    <div class="mb-5">
+      <label for="name" class="sr-only">Nom</label>
+      <input
+        v-model="name"
+        v-bind="nameAttrs"
+        type="text"
+        placeholder="Nom"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="name"
       />
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please provide your full name.
+      <div v-if="errors.name" class="text-red-400 text-sm mt-1">
+        Nom obligatoire.
       </div>
     </div>
     <div class="mb-5">
       <label for="email_address" class="sr-only">Adresse e-mail</label
       ><input
+        v-model="email"
+        v-bind="emailAttrs"
         id="email_address"
         type="email"
         placeholder="Adresse e-mail"
         name="email"
-        required
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
-      <div class="empty-feedback text-red-400 text-sm mt-1">
-        Please provide your email address.
-      </div>
-      <div class="invalid-feedback text-red-400 text-sm mt-1">
-        Please provide a valid email address.
+      <div v-if="errors.email" class="text-red-400 text-sm mt-1">
+        Veuillez renseigner un email valide.
       </div>
     </div>
     <div class="mb-3">
+      <label for="message" class="sr-only">Message</label>
       <textarea
+        v-model="message"
+        v-bind="messageAttrs"
+        id="message"
         name="message"
         required
         placeholder="Votre message"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please enter your message.
+      <div v-if="errors.message" class="text-red-400 text-sm mt-1">
+        Message obligatoire.
       </div>
     </div>
     <LandingButton type="submit" size="lg" block>Envoyer</LandingButton>
-    <div id="result" class="mt-3 text-center"></div>
   </form>
 </template>
-
-<style>
-.invalid-feedback,
-.empty-feedback {
-  display: none;
-}
-
-.was-validated :placeholder-shown:invalid ~ .empty-feedback {
-  display: block;
-}
-
-.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
-  display: block;
-}
-
-.is-invalid,
-.was-validated :invalid {
-  border-color: #dc3545;
-}
-</style>
