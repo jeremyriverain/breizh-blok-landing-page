@@ -16,13 +16,13 @@ useHead({
 
 <template>
   <LandingContainer>
-    <div class="mt-16 center text-center">
+    <div class="mt-7 lg:mt-16 center text-center">
       <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
         Contribuer au topo
       </h1>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-4 lg:mt-16">
       <div>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
           Breizh Blok est un projet collaboratif. Il est réalisé par des
