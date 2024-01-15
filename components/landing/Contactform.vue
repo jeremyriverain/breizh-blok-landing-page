@@ -1,24 +1,23 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
-import { object, string, type Asserts } from "yup";
+import { object, string } from "yup";
 import nprogress from "nprogress";
 
 const validationSchema = object({
-  firstName: string().required(),
+  firstname: string().required(),
   name: string().required(),
   email: string().required().email(),
   message: string().required(),
+  "form-name": string().required(),
 });
 
-interface ContactForm extends Asserts<typeof validationSchema> {}
-
-const { defineField, errors, handleSubmit } = useForm({
+const { defineField, errors, handleSubmit, setValues } = useForm({
   validationSchema,
 });
 
 let submittedStatus: Ref<"error" | "success" | null> = ref(null);
 
-const [firstName, firstNameAttrs] = defineField("firstName");
+const [firstname, firstnameAttrs] = defineField("firstname");
 
 const [name, nameAttrs] = defineField("name");
 
@@ -26,25 +25,24 @@ const [email, emailAttrs] = defineField("email");
 
 const [message, messageAttrs] = defineField("message");
 
-function encode(data: ContactForm) {
-  return Object.keys(data)
-    .map(
-      (key) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(
-          data[key as keyof ContactForm]
-        )}`
-    )
-    .join("&");
-}
+const [formName, formNameAttrs] = defineField("form-name");
+
+setValues({
+  "form-name": "contact",
+});
 
 const onSubmit = handleSubmit(async (values, { resetForm }) => {
   submittedStatus.value = null;
   nprogress.start();
 
   try {
-    const response = await $fetch("/contribute/", {
+    console.log(window.location.href);
+    const payload = new URLSearchParams(values).toString();
+    console.log(payload);
+
+    const response = await fetch(window.location.href, {
       method: "POST",
-      body: encode(values as ContactForm),
+      body: payload,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -91,18 +89,23 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
     @submit.prevent="onSubmit"
     v-show="submittedStatus !== 'success'"
   >
-    <input type="hidden" name="form-name" value="contact" />
+    <input
+      type="hidden"
+      name="form-name"
+      v-bind="formNameAttrs"
+      v-model="formName"
+    />
 
     <div class="mb-5">
-      <label for="first_name" class="sr-only">Prénom</label>
+      <label for="firstname" class="sr-only">Prénom</label>
       <input
-        v-model="firstName"
-        v-bind="firstNameAttrs"
-        id="first_name"
+        v-model="firstname"
+        v-bind="firstnameAttrs"
+        id="firstname"
         type="text"
         placeholder="Prénom"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
-        name="first name"
+        name="firstname"
       />
       <div v-if="errors.firstName" class="text-red-400 text-sm mt-1">
         Prénom obligatoire.
@@ -117,6 +120,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
         placeholder="Nom"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="name"
+        id="name"
       />
       <div v-if="errors.name" class="text-red-400 text-sm mt-1">
         Nom obligatoire.
