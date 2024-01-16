@@ -107,7 +107,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="firstname"
       />
-      <div v-if="errors.firstName" class="text-red-400 text-sm mt-1">
+      <div v-if="errors.firstname" class="text-red-400 text-sm mt-1">
         Prénom obligatoire.
       </div>
     </div>
@@ -141,7 +141,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
         Veuillez renseigner un email valide.
       </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-5">
       <label for="message" class="sr-only">Message</label>
       <textarea
         v-model="message"
@@ -152,7 +152,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
         placeholder="Votre message"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
-      <div v-if="errors.message" class="text-red-400 text-sm mt-1">
+      <div v-if="errors.message" class="text-red-400 text-sm">
         Message obligatoire.
       </div>
     </div>
