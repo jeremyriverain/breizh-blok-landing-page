@@ -25,7 +25,7 @@ const features = [
     icon: "🔍",
   },
   {
-    title: "Accès hors-ligne (disponible prochainement)",
+    title: "Accès hors-ligne",
     description:
       "Téléchargez un secteur avant votre session et accédez ainsi au topo même quand la connexion internet est inexistante.",
     icon: "📶",
