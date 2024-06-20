@@ -2,17 +2,18 @@
   <main class="grid lg:grid-cols-2 place-items-center pt-12 pb-8 md:pt-8">
     <div class="md:order-1 hidden md:block">
       <img
-        src="~/assets/img/mockup-900.png"
+        src="~/assets/img/mockup-900.webp"
         alt="mockups de l'application"
         loading="eager"
         width="600"
         height="685"
         srcset="
-          ~/assets/img/mockup-600.png   600w,
-          ~/assets/img/mockup-900.png   900w,
-          ~/assets/img/mockup-1200.png 1200w
+          ~/assets/img/mockup-600.webp   600w,
+          ~/assets/img/mockup-900.webp   900w,
+          ~/assets/img/mockup-1200.webp 1200w
         "
         sizes="600"
+        fetchpriority="high"
       />
     </div>
 
