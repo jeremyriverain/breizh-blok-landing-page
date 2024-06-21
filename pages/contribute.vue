@@ -25,16 +25,10 @@ useHead({
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-4 lg:mt-16">
       <div>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Breizh Blok est un projet collaboratif. Il est réalisé par des
-          grimpeurs, pour des grimpeurs. Il vise à promouvoir la pratique du
-          bloc en Bretagne.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          L'exhaustivité du topo et l'exactitude des données dépendent des
-          contributions des uns et des autres. Vous grimpez régulièrement en
-          extérieur et vous voulez ajouter des secteurs et des blocs ? Vous avez
-          repéré une erreur sur le topo ? Vous avez des idées pour améliorer
-          l'application ? En ce cas, contactez-nous.
+          Vous grimpez régulièrement en extérieur et vous voulez ajouter des
+          secteurs et des blocs ? Vous avez repéré une erreur sur le topo ? Vous
+          avez des idées pour améliorer l'application ? N'hésitez pas à nous
+          contacter.
         </p>
       </div>
       <div>
