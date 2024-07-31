@@ -2,11 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css", "nprogress/nprogress.css"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   modules: ["nuxt-icon", "@nuxt/devtools"],
+  compatibilityDate: "2024-07-31",
 });
