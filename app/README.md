@@ -1,6 +1,6 @@
 # Breizh Blok Landing page
 
-See [Website](https://breizh-blok.netlify.app/)
+See [Website](https://breizh-blok.fr/).
 
 Made with [Nuxt](https://nuxt.com/).
 
@@ -11,7 +11,7 @@ You should have **Node ^20** on your machine.
 Make sure to install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Development Server
@@ -19,7 +19,7 @@ npm install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## Production
@@ -27,11 +27,11 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run generate
+pnpm generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm preview
 ```
