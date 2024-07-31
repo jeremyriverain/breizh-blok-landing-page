@@ -1,13 +1,13 @@
 {
-  "name": "nuxt-app",
+  "name": "app",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run generate",
+    "build": "pnpm generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lighthouse": "PORT=8764 start-server-and-test 'npm run preview' tcp:8764 'unlighthouse'",
-    "lighthouse:ci": "PORT=8764 start-server-and-test 'npm run preview' tcp:8764 'DEVICE=desktop npx unlighthouse-ci && DEVICE=mobile npx unlighthouse-ci'",
+    "lighthouse": "PORT=8764 start-server-and-test 'pnpm preview' tcp:8764 'unlighthouse'",
+    "lighthouse:ci": "PORT=8764 start-server-and-test 'pnpm preview' tcp:8764 'DEVICE=desktop pnpm dlx unlighthouse-ci && DEVICE=mobile pnpm dlx unlighthouse-ci'",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

@@ -2,8 +2,6 @@
 
 See [Website](https://breizh-blok.fr/).
 
-Made with [Nuxt](https://nuxt.com/).
-
 ## Setup
 
 You should have **Node ^20** on your machine.

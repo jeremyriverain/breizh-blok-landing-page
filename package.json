@@ -1,0 +1,11 @@
+{
+  "name": "breizh-blok-landing-page",
+  "version": "1.0.0",
+  "type": "module",
+  "private": "true",
+  "scripts": {
+    "dev": "pnpm --filter app dev",
+    "generate": "pnpm --filter app generate",
+    "preview": "pnpm -filter app preview"
+  }
+}

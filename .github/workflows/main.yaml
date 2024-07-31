@@ -18,11 +18,11 @@ jobs:
 
       - name: build
         run: |
-          npm ci
-          npm run generate
+          pnpm install --frozen-lockfile
+          pnpm generate
 
       - name: lighthouse
-        run: npm run lighthouse:ci
+        run: pnpm --filter app lighthouse:ci
 
       - uses: actions/upload-artifact@v3
         if: always()
@@ -30,4 +30,4 @@ jobs:
           name: test-artifacts
           retention-days: 30
           path: |
-            .unlighthouse/
+            packages/app/.unlighthouse/
