@@ -1,0 +1,10 @@
+{
+  "name": "contact-form-function",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloud function permettant de traiter l'envoi du formulaire de contact",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.2"
+  }
+}
