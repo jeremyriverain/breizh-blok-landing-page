@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.geekco.boulders",
+      "sha256_cert_fingerprints": [
+        "D0:0C:DC:1C:42:B2:A2:15:24:A2:97:16:82:B5:32:62:40:0C:AE:CF:BB:12:62:E8:D1:68:A1:11:AC:3E:29:1D"
+      ]
+    }
+  }
+]
