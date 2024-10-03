@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "XV7D9WGT3H.fr.geekco.boulders"
+        ],
+        "components": [
+          {
+            "/": "/boulders/*",
+            "comment": "path to boulder details"
+          },
+          {
+            "/": "/boulder-areas/*",
+            "comment": "path to boulder area details"
+          },
+          {
+            "/": "/municipalities/*",
+            "comment": "path to municipality details"
+          }
+        ]
+      }
+    ]
+  }
+}
