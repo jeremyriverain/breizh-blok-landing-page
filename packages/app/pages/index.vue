@@ -8,7 +8,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content: `Breizh Blok est une application mobile répertoriant les blocs d'escalade en Bretagne. + de 1400 blocs répertoriés. Disponible sur Android et iOS.`,
+      content: `Breizh Blok est une application mobile répertoriant les blocs d'escalade en Bretagne. + de 1700 blocs répertoriés. Disponible sur Android et iOS.`,
     },
   ],
 });

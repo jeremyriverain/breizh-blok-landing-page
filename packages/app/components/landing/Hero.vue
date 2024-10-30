@@ -27,7 +27,7 @@
       </h1>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         Breizh Blok est une application mobile répertoriant les blocs d'escalade
-        en Bretagne. + de 1600 blocs répertoriés. Disponible sur Android et iOS.
+        en Bretagne. + de 1700 blocs répertoriés. Disponible sur Android et iOS.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink
