@@ -16,6 +16,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/devtools"],
+  modules: ["@nuxt/devtools", "@nuxtjs/i18n", "@nuxt/icon"],
   compatibilityDate: "2024-07-31",
+
+  i18n: {
+    locales: ["en", "fr"],
+    defaultLocale: "fr",
+    vueI18n: "./i18n.config.ts",
+  },
 });

@@ -13,6 +13,8 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
+    "@nuxt/icon": "^1.7.2",
+    "@nuxtjs/i18n": "9.0.0-rc.2",
     "@tailwindcss/typography": "^0.5.15",
     "@types/nprogress": "^0.2.3",
     "@unlighthouse/cli": "^0.14.0",

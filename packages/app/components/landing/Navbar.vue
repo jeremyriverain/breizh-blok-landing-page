@@ -12,14 +12,19 @@
             height="60"
           />
         </NuxtLink>
-        <div class="flex">
+        <div class="flex items-center">
           <nav class="items-end">
-            <LandingLink href="/contribute" styleName="muted"
-              >Contribuer au topo</LandingLink
-            >
+            <LandingLink :href="localePath('/contribute')" styleName="muted">{{
+              $t("contributeToTheTopo")
+            }}</LandingLink>
           </nav>
+          <LandingLocaleSwitcher class="ml-3" />
         </div>
       </div>
     </header>
   </LandingContainer>
 </template>
+
+<script setup lang="ts">
+const localePath = useLocalePath();
+</script>
