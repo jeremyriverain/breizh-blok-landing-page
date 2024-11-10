@@ -16,6 +16,6 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["nuxt-icon", "@nuxt/devtools"],
+  modules: ["@nuxt/devtools"],
   compatibilityDate: "2024-07-31",
 });
