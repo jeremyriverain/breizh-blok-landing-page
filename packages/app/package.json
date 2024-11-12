@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
-    "@nuxtjs/i18n": "9.0.0-rc.2",
+    "@nuxtjs/i18n": "^9.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/nprogress": "^0.2.3",
     "autoprefixer": "^10.4.20",
@@ -24,8 +24,5 @@
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "yup": "^1.4.0"
-  },
-  "dependencies": {
-    "@vueuse/core": "^11.2.0"
   }
 }

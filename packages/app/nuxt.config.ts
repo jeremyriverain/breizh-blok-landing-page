@@ -36,5 +36,6 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "fr",
     baseUrl: "https://breizh-blok.fr",
+    detectBrowserLanguage: false,
   },
 });

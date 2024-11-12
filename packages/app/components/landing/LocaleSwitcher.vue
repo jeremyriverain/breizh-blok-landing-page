@@ -10,13 +10,14 @@
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-1 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       @change="setLocale($event.target.value)"
     >
-      <LandingLocaleSwitcherOption
+      <option
         v-for="l in locales"
         :key="l.code"
-        :code="l.code"
-        :name="l.name"
+        :value="l.code"
         :selected="locale === l.code"
-      />
+      >
+        {{ l.name }}
+      </option>
     </select>
   </div>
 </template>
