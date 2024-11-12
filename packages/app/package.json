@@ -6,28 +6,26 @@
     "build": "pnpm generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lighthouse": "PORT=8764 start-server-and-test 'pnpm preview' tcp:8764 'unlighthouse'",
-    "lighthouse:ci": "PORT=8764 start-server-and-test 'pnpm preview' tcp:8764 'DEVICE=desktop pnpm dlx unlighthouse-ci && DEVICE=mobile pnpm dlx unlighthouse-ci'",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
-    "@nuxt/icon": "^1.7.2",
     "@nuxtjs/i18n": "9.0.0-rc.2",
     "@tailwindcss/typography": "^0.5.15",
     "@types/nprogress": "^0.2.3",
-    "@unlighthouse/cli": "^0.14.0",
     "autoprefixer": "^10.4.20",
     "nprogress": "^0.2.0",
     "nuxt": "^3.14.159",
     "postcss": "^8.4.47",
     "start-server-and-test": "^2.0.8",
     "tailwindcss": "^3.4.14",
-    "unlighthouse": "^0.14.0",
     "vee-validate": "^4.14.7",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "yup": "^1.4.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.2.0"
   }
 }

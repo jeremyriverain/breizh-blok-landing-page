@@ -12,6 +12,7 @@ export default defineI18nLocale(() => {
       "Tu grimpes régulièrement en extérieur et tu souhaites ajouter des  secteurs et des blocs ? Tu as repéré une erreur sur le topo ? Tu as des idées pour améliorer l'application ?",
     contributeMetaDescription:
       "Vous grimpez régulièrement en extérieur et vous voulez ajouter des secteurs et des blocs ? Vous avez repéré une erreur sur le topo ? En ce cas contactez-nous.",
+    contribute: "Contribuer",
     contributeToTheTopo: "Contribuer au topo",
     emailAddress: "Adresse e-mail",
     enterValidEmail: "Veuillez renseigner un email valide",
@@ -39,6 +40,7 @@ export default defineI18nLocale(() => {
       "Breizh Blok est une application mobile répertoriant les blocs d'escalade en Bretagne. + de {totalBoulders} blocs répertoriés. Disponible sur Android et iOS.",
     lastName: "Nom",
     message: "Votre message",
+    selectYourLanguage: "Sélectionner votre langage",
     submit: "Envoyer",
     thisFieldIsMandatory: "Ce champ est obligatoire",
     tryAgain: "Essayez à nouveau",

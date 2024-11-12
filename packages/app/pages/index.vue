@@ -16,11 +16,18 @@ useHead({
     },
   ],
 });
+
+const localePath = useLocalePath();
 </script>
 
 <template>
   <LandingContainer>
     <LandingHero :total-boulders="totalBoulders"></LandingHero>
     <LandingFeatures></LandingFeatures>
+    <div class="flex justify-center mt-8">
+      <LandingLink :href="localePath('/contribute')">
+        {{ $t("contributeToTheTopo") }}
+      </LandingLink>
+    </div>
   </LandingContainer>
 </template>

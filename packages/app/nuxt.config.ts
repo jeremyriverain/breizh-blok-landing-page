@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/devtools", "@nuxtjs/i18n", "@nuxt/icon"],
+  modules: ["@nuxt/devtools", "@nuxtjs/i18n"],
   compatibilityDate: "2024-07-31",
 
   i18n: {
@@ -24,11 +24,13 @@ export default defineNuxtConfig({
       {
         code: "en",
         language: "en-US",
+        name: "🇬🇧 EN",
         file: "en.ts",
       },
       {
         code: "fr",
         language: "fr-FR",
+        name: "🇫🇷 FR",
         file: "fr.ts",
       },
     ],

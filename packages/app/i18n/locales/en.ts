@@ -11,7 +11,8 @@ export default defineI18nLocale(() => {
       "Do you regularly climb outdoors and want to add boulders? Have you spotted a mistake in the guidebook? Do you have ideas for improving the application?",
     contributeMetaDescription:
       "Do you regularly climb outdoors and want to add boulders? Have you spotted an error in the guidebook? Then contact us.",
-    contributeToTheTopo: "Contribute to the topo",
+    contribute: "Contribute",
+    contributeToTheTopo: "Contribute",
     emailAddress: "Email address",
     enterValidEmail: "Please enter a valid email address",
     featureContributeDescription:
@@ -39,6 +40,7 @@ export default defineI18nLocale(() => {
       "Breizh Blok is a mobile application listing climbing boulders in Brittany. Over {totalBoulders} boulders listed. Available on iOS and Android.",
     lastName: "Last name",
     message: "Your message",
+    selectYourLanguage: "Select your language",
     submit: "Submit",
     thisFieldIsMandatory: "This field is mandatory",
     tryAgain: "Please try again",
