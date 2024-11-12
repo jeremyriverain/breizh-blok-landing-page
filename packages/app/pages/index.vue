@@ -1,14 +1,18 @@
-<script setup>
+<script setup lang="ts">
 definePageMeta({
   layout: "landing",
 });
 
+const { t } = useI18n();
+
+const totalBoulders = 1700;
+
 useHead({
-  title: `Breizh Blok, topo des blocs d'escalade de Bretagne`,
+  title: t("indexMetaTitle"),
   meta: [
     {
       name: "description",
-      content: `Breizh Blok est une application mobile répertoriant les blocs d'escalade en Bretagne. + de 1700 blocs répertoriés. Disponible sur Android et iOS.`,
+      content: t("indexDescription", { totalBoulders }),
     },
   ],
 });
@@ -16,7 +20,7 @@ useHead({
 
 <template>
   <LandingContainer>
-    <LandingHero></LandingHero>
+    <LandingHero :total-boulders="totalBoulders"></LandingHero>
     <LandingFeatures></LandingFeatures>
   </LandingContainer>
 </template>

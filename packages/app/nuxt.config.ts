@@ -20,8 +20,19 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-07-31",
 
   i18n: {
-    locales: ["en", "fr"],
+    locales: [
+      {
+        code: "en",
+        language: "en-US",
+        file: "en.ts",
+      },
+      {
+        code: "fr",
+        language: "fr-FR",
+        file: "fr.ts",
+      },
+    ],
     defaultLocale: "fr",
-    vueI18n: "./i18n.config.ts",
+    baseUrl: "https://breizh-blok.fr",
   },
 });

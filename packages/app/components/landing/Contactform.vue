@@ -68,7 +68,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
     v-if="submittedStatus === 'error'"
   >
     <span class="block sm:inline"
-      >Une erreur est survenue. Essayez à nouveau.</span
+      >{{ $t("anErrorOccured") }}. {{ $t("tryAgain") }}.</span
     >
   </div>
 
@@ -77,7 +77,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
     role="alert"
     v-if="submittedStatus === 'success'"
   >
-    <span class="block sm:inline">Votre message a été envoyé.</span>
+    <span class="block sm:inline">{{ $t("yourMessageIsSent") }}.</span>
   </div>
 
   <form
@@ -97,65 +97,67 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
     />
 
     <div class="mb-5">
-      <label for="firstname" class="sr-only">Prénom</label>
+      <label for="firstname" class="sr-only">{{ $t("firstName") }}</label>
       <input
         v-model="firstname"
         v-bind="firstnameAttrs"
         id="firstname"
         type="text"
-        placeholder="Prénom"
+        :placeholder="$t('firstName')"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="firstname"
       />
       <div v-if="errors.firstname" class="text-red-400 text-sm mt-1">
-        Prénom obligatoire.
+        {{ $t("thisFieldIsMandatory") }}.
       </div>
     </div>
     <div class="mb-5">
-      <label for="name" class="sr-only">Nom</label>
+      <label for="name" class="sr-only">{{ $t("lastName") }}</label>
       <input
         v-model="name"
         v-bind="nameAttrs"
         type="text"
-        placeholder="Nom"
+        :placeholder="$t('lastName')"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="name"
         id="name"
       />
       <div v-if="errors.name" class="text-red-400 text-sm mt-1">
-        Nom obligatoire.
+        {{ $t("thisFieldIsMandatory") }}.
       </div>
     </div>
     <div class="mb-5">
-      <label for="email_address" class="sr-only">Adresse e-mail</label
+      <label for="email_address" class="sr-only">{{ $t("emailAddress") }}</label
       ><input
         v-model="email"
         v-bind="emailAttrs"
         id="email_address"
         type="email"
-        placeholder="Adresse e-mail"
+        :placeholder="$t('emailAddress')"
         name="email"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
       <div v-if="errors.email" class="text-red-400 text-sm mt-1">
-        Veuillez renseigner un email valide.
+        {{ $t("enterValidEmail") }}.
       </div>
     </div>
     <div class="mb-5">
-      <label for="message" class="sr-only">Message</label>
+      <label for="message" class="sr-only">{{ $t("message") }}</label>
       <textarea
         v-model="message"
         v-bind="messageAttrs"
         id="message"
         name="message"
         required
-        placeholder="Votre message"
+        :placeholder="$t('message')"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
       <div v-if="errors.message" class="text-red-400 text-sm">
-        Message obligatoire.
+        {{ $t("thisFieldIsMandatory") }}.
       </div>
     </div>
-    <LandingButton type="submit" size="lg" block>Envoyer</LandingButton>
+    <LandingButton type="submit" size="lg" block>{{
+      $t("submit")
+    }}</LandingButton>
   </form>
 </template>

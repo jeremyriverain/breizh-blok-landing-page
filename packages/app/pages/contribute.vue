@@ -3,12 +3,14 @@ definePageMeta({
   layout: "landing",
 });
 
+const { t } = useI18n();
+
 useHead({
-  title: `Contribuer au topo - Breizh Blok`,
+  title: `${t("contributeToTheTopo")} - Breizh Blok`,
   meta: [
     {
       name: "description",
-      content: `Vous grimpez régulièrement en extérieur et vous voulez ajouter des secteurs et des blocs ? Vous avez repéré une erreur sur le topo ? En ce cas contactez-nous.`,
+      content: t("contributeMetaDescription"),
     },
   ],
 });
@@ -18,19 +20,17 @@ useHead({
   <LandingContainer>
     <div class="mt-7 lg:mt-16 center text-center">
       <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Contribuer au topo
+        {{ $t("contributeToTheTopo") }}
       </h1>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-4 lg:mt-16">
       <div>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Tu grimpes régulièrement en extérieur et tu souhaites ajouter des
-          secteurs et des blocs ? Tu as repéré une erreur sur le topo ? Tu as
-          des idées pour améliorer l'application ?
+          {{ $t("contributeDescription") }}
         </p>
         <p class="text-lg leading-relaxed text-slate-500 mt-2">
-          Tu peux nous contacter directement via ce formulaire de contact.
+          {{ $t("contactUs") }}
         </p>
       </div>
       <div>

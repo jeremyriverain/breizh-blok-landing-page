@@ -1,39 +1,34 @@
 <script setup>
+const { t } = useI18n();
 const features = [
   {
-    title: "3 modes de navigation",
-    description:
-      "3 modes de navigation pour découvrir le topo de différentes manières (en parcourant une liste, une carte des blocs, ou un index des blocs par commune et secteur).",
+    title: t("featureEasyNavigationTitle"),
+    description: t("featureEasyNavigationDescription"),
     icon: "🔥",
   },
   {
-    title: "Carte intéractive",
-    description:
-      "Les blocs sont visibles sur une carte. En cliquant sur les marqueurs de position, on peut en voir le détail.",
+    title: t("featureMapTitle"),
+    description: t("featureMapDescription"),
     icon: "🌐",
   },
   {
-    title: "Des infos détaillées",
-    description:
-      "L'application comporte des vues détaillées de chaque commune, secteur et bloc. Chaque bloc comporte une photo et la ligne de bloc est matérialisée par un trait rouge.",
+    title: t("featureDetailsInfoTitle"),
+    description: t("featureDetailsInfoDescription"),
     icon: "🔖",
   },
   {
-    title: "Trier et filtrer les blocs",
-    description:
-      "Des critères de recherche permettent de regrouper les blocs par commune, secteur, niveau de difficulté. On peut aussi afficher les blocs les plus récents.",
+    title: t("featureSearchCriteriaTitle"),
+    description: t("featureSearchCriteriaDescription"),
     icon: "🔍",
   },
   {
-    title: "Accès hors-ligne",
-    description:
-      "Téléchargez un secteur avant votre session et accédez ainsi au topo même quand la connexion internet est inexistante.",
+    title: t("featureOfflineFirstTitle"),
+    description: t("featureOfflineFirstDescription"),
     icon: "📶",
   },
   {
-    title: "Vous voulez contribuer au topo ?",
-    description:
-      "Vous faites régulièrement du bloc et vous aimeriez que certains blocs figurent sur le topo ? C'est possible. Pour cela, contactez-nous afin de devenir contributeur.",
+    title: t("featureContributeTitle"),
+    description: t("featureContributeDescription"),
     icon: "🤝",
   },
 ];

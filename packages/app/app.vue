@@ -6,9 +6,6 @@
 
 <script setup lang="ts">
 useHead({
-  htmlAttrs: {
-    lang: "fr",
-  },
   link: [
     {
       rel: "apple-touch-icon",
