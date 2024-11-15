@@ -7,12 +7,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "pnpm exec playwright test"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
     "@nuxtjs/i18n": "^9.0.0",
+    "@playwright/test": "^1.48.2",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.9.0",
     "@types/nprogress": "^0.2.3",
     "autoprefixer": "^10.4.20",
     "nprogress": "^0.2.0",

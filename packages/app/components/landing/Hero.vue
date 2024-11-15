@@ -42,7 +42,7 @@ defineProps<{ totalBoulders: number }>();
           size="lg"
           styleName="outline"
           rel="noopener"
-          href="https://apps.apple.com/fr/app/breizh-blok/id1616287447"
+          href="https://apps.apple.com/app/breizh-blok/id1616287447"
           target="_blank"
           >{{ $t("downloadOnIOS") }}</LandingLink
         >
