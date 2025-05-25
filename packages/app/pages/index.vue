@@ -5,7 +5,7 @@ definePageMeta({
 
 const { t } = useI18n();
 
-const totalBoulders = 1700;
+const totalBoulders = 2000;
 
 useHead({
   title: t("indexMetaTitle"),
