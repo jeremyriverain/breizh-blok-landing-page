@@ -4,7 +4,7 @@ See [Website](https://breizh-blok.fr/).
 
 ## Setup
 
-You should have **Node ^20** on your machine.
+You should have **Node ^22** on your machine.
 
 Make sure to install the dependencies:
 
@@ -32,4 +32,11 @@ Locally preview production build:
 
 ```bash
 pnpm preview
+```
+
+## Run tests
+
+```bash
+pnpm --filter app exec playwright install --with-deps chromium
+pnpm --filter app run test
 ```
