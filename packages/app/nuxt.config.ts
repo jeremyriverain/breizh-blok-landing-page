@@ -1,8 +1,12 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css", "nprogress/nprogress.css"],
-
+  vite: {
+        plugins: [tailwindcss()],
+  },
   routeRules: {
     "/boulders/**": { redirect: { to: "/", statusCode: 301 } },
     "/boulder-areas/**": { redirect: { to: "/", statusCode: 301 } },
@@ -11,7 +15,6 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      tailwindcss: {},
       autoprefixer: {},
     },
   },
