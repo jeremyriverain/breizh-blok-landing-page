@@ -6,18 +6,11 @@ export default defineI18nLocale(() => {
     appPurpose: "Topo of climbing boulders in Brittany (France)",
     downloadOnAndroid: "Download on Android",
     downloadOnIOS: "Download on iOS",
+    closeMenu: "Close main menu",
+    contact: "Contact",
     contactUs: "You can contact us directly using this contact form.",
-    contributeDescription:
-      "Do you regularly climb outdoors and want to add boulders? Have you spotted a mistake in the guidebook? Do you have ideas for improving the application?",
-    contributeMetaDescription:
-      "Do you regularly climb outdoors and want to add boulders? Have you spotted an error in the guidebook? Then contact us.",
-    contribute: "Contribute",
-    contributeToTheTopo: "Contribute",
     emailAddress: "Email address",
     enterValidEmail: "Please enter a valid email address",
-    featureContributeDescription:
-      "Are you a regular climber and would like some of your boulders to appear in the topo? It's possible. Contact us to become a contributor.",
-    featureContributeTitle: "Would you like to contibute?",
     featureDetailsInfoDescription:
       "The application includes detailed views of each municipality, boulder area and boulder. Each boulder has a photo and the boulder line is marked with a red line.",
     featureDetailsInfoTitle: "Lots of details",
@@ -40,8 +33,11 @@ export default defineI18nLocale(() => {
       "Breizh Blok is a mobile application listing climbing boulders in Brittany. Over {totalBoulders} boulders listed. Available on iOS and Android.",
     lastName: "Last name",
     message: "Your message",
+    openMenu: "Open main menu",
     selectYourLanguage: "Select your language",
     submit: "Submit",
+    supportTheProject: "Support the projet",
+    supportTheProjectDescription: "Running this application isn't free. That's why every financial contribution from you is incredibly important to keep Breizh Blok going.",
     thisFieldIsMandatory: "This field is mandatory",
     tryAgain: "Please try again",
     yourMessageIsSent: "Your message is sent",

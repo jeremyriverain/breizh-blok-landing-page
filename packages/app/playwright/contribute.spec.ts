@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 test("contact form happy path", async ({ page }) => {
-  await page.goto("/contribute");
+  await page.goto("/contact");
   expect(
-    await page.getByRole("heading", { name: "Contribuer au topo" })
+    await page.getByRole("heading", { name: "Contact" })
   ).toBeVisible();
   await expect(
     page.locator("#contact-form[name=contact][data-netlify=true]")
@@ -15,7 +15,7 @@ test("contact form happy path", async ({ page }) => {
 
   const requestPromise = page.waitForRequest(
     (request) =>
-      request.url().endsWith("/contribute") && request.method() === "POST"
+      request.url().endsWith("/contact") && request.method() === "POST"
   );
   await page.getByText("Envoyer").click();
   expect(await page.getByText("Votre message a été envoyé")).toBeVisible();
@@ -31,9 +31,9 @@ test("contact form happy path", async ({ page }) => {
 });
 
 test("contact form validation rules", async ({ page }) => {
-  await page.goto("/contribute");
+  await page.goto("/contact");
   const titleLocator = await page.getByRole("heading", {
-    name: "Contribuer au topo",
+    name: "Contact",
   });
   await titleLocator.click();
   expect(titleLocator).toBeVisible();

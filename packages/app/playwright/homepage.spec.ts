@@ -24,11 +24,11 @@ test("should display homepage", async ({ page }) => {
   expect(androidLink).toBeVisible();
   await expect(androidLink).toHaveAttribute("href", /play.google.com/);
 
-  await page.getByRole("link", { name: "Contribuer au topo" }).first().click();
+  await page.getByRole("link", { name: "Contact" }).first().click();
 
-  await page.getByRole("heading", { name: "Contribuer au topo" }).click();
+  await page.getByRole("heading", { name: "Contact" }).click();
 
   expect(
-    await page.getByRole("heading", { name: "Contribuer au topo" })
+    await page.getByRole("heading", { name: "Contact" })
   ).toBeVisible();
 });

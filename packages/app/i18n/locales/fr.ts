@@ -6,19 +6,12 @@ export default defineI18nLocale(() => {
     appPurpose: "Topo des blocs d'escalade en Bretagne",
     downloadOnAndroid: "Télécharger sur Android",
     downloadOnIOS: "Télécharger sur iOS",
+    closeMenu: "Fermer menu principal",
+    contact: "Contact",
     contactUs:
-      "Tu peux nous contacter directement via ce formulaire de contact.",
-    contributeDescription:
-      "Tu grimpes régulièrement en extérieur et tu souhaites ajouter des  secteurs et des blocs ? Tu as repéré une erreur sur le topo ? Tu as des idées pour améliorer l'application ?",
-    contributeMetaDescription:
-      "Vous grimpez régulièrement en extérieur et vous voulez ajouter des secteurs et des blocs ? Vous avez repéré une erreur sur le topo ? En ce cas contactez-nous.",
-    contribute: "Contribuer",
-    contributeToTheTopo: "Contribuer au topo",
+      "Vous pouvez nous contacter directement via ce formulaire de contact.",
     emailAddress: "Adresse e-mail",
     enterValidEmail: "Veuillez renseigner un email valide",
-    featureContributeDescription:
-      "Vous faites régulièrement du bloc et vous aimeriez que certains blocs figurent sur le topo ? C'est possible. Pour cela, contactez-nous afin de devenir contributeur.",
-    featureContributeTitle: "Vous voulez contribuer au topo ?",
     featureDetailsInfoDescription:
       "L'application comporte des vues détaillées de chaque commune, secteur et bloc. Chaque bloc comporte une photo et la ligne de bloc est matérialisée par un trait rouge.",
     featureDetailsInfoTitle: "Des infos détaillées",
@@ -40,8 +33,11 @@ export default defineI18nLocale(() => {
       "Breizh Blok est une application mobile répertoriant les blocs d'escalade en Bretagne. + de {totalBoulders} blocs répertoriés. Disponible sur Android et iOS.",
     lastName: "Nom",
     message: "Votre message",
+    openMenu: "Ouvrir menu principal",
     selectYourLanguage: "Sélectionner votre langage",
     submit: "Envoyer",
+    supportTheProject: "Soutenir le projet",
+    supportTheProjectDescription: "Le fonctionnement de l'application n'est pas gratuit. Chaque contribution financière de votre part compte énormément pour pérenniser Breizh Blok.",
     thisFieldIsMandatory: "Ce champ est obligatoire",
     tryAgain: "Essayez à nouveau",
     yourMessageIsSent: "Votre message a été envoyé",
