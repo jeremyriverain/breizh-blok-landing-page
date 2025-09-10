@@ -22,7 +22,7 @@ test("i18n works", async ({ page }) => {
 
   await expect(page).toHaveURL(/\/en$/);
 
-  await page.getByRole("link", { name: "Contribute" }).first().click();
+  await page.getByRole("link", { name: "Contact" }).first().click();
 
-  await expect(page).toHaveURL(/\/en\/contribute$/);
+  await expect(page).toHaveURL(/\/en\/contact$/);
 });

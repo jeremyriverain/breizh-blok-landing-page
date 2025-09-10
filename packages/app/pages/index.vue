@@ -16,8 +16,6 @@ useHead({
     },
   ],
 });
-
-const localePath = useLocalePath();
 </script>
 
 <template>
@@ -25,9 +23,9 @@ const localePath = useLocalePath();
     <LandingHero :total-boulders="totalBoulders"></LandingHero>
     <LandingFeatures></LandingFeatures>
     <div class="flex justify-center mt-8">
-      <LandingLink :href="localePath('/contribute')">
-        {{ $t("contributeToTheTopo") }}
-      </LandingLink>
+      <a href="https://www.buymeacoffee.com/breizhblok" target="_blank" rel="noopener noreferrer"><img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+          class="ml-3 mt-8 h-auto w-48"></a>
     </div>
   </LandingContainer>
 </template>

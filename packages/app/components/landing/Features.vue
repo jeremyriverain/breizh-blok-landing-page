@@ -27,8 +27,8 @@ const features = [
     icon: "📶",
   },
   {
-    title: t("featureContributeTitle"),
-    description: t("featureContributeDescription"),
+    title: t("supportTheProject"),
+    description: t("supportTheProjectDescription"),
     icon: "🤝",
   },
 ];

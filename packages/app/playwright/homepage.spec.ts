@@ -24,11 +24,22 @@ test("should display homepage", async ({ page }) => {
   expect(androidLink).toBeVisible();
   await expect(androidLink).toHaveAttribute("href", /play.google.com/);
 
-  await page.getByRole("link", { name: "Contribuer au topo" }).first().click();
+  await page.getByRole("link", { name: "Contact" }).first().click();
 
-  await page.getByRole("heading", { name: "Contribuer au topo" }).click();
+  await page.getByRole("heading", { name: "Contact" }).click();
 
   expect(
-    await page.getByRole("heading", { name: "Contribuer au topo" })
+    await page.getByRole("heading", { name: "Contact" })
   ).toBeVisible();
+});
+
+test("verify buymeacoffee link is opened in new tab", async ({ page }) => {
+  await page.goto("/");
+  const newTabPromise = page.waitForEvent("popup");
+
+  await page.getByAltText('Buy Me A Coffee').click();
+  const newTab = await newTabPromise;
+  await newTab.waitForLoadState();
+
+  await expect(newTab).toHaveURL(/buymeacoffee\.com\/breizhblok/);
 });

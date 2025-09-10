@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
 
-const p = defineProps({
+defineProps({
   href: {
     type: String,
     required: true,
@@ -34,14 +34,12 @@ const styles = {
 </script>
 
 <template>
-  <NuxtLink
-    :href="href"
-    :class="[
-      'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200',
-      block && 'w-full',
-      sizes[size],
-      styles[styleName],
-    ]"
-    ><slot />
+  <NuxtLink :href="href" :class="[
+    'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200',
+    block && 'w-full',
+    sizes[size],
+    styles[styleName],
+  ]">
+    <slot />
   </NuxtLink>
 </template>
