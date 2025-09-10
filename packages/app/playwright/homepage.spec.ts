@@ -32,3 +32,14 @@ test("should display homepage", async ({ page }) => {
     await page.getByRole("heading", { name: "Contact" })
   ).toBeVisible();
 });
+
+test("verify buymeacoffee link is opened in new tab", async ({ page }) => {
+  await page.goto("/");
+  const newTabPromise = page.waitForEvent("popup");
+
+  await page.getByAltText('Buy Me A Coffee').click();
+  const newTab = await newTabPromise;
+  await newTab.waitForLoadState();
+
+  await expect(newTab).toHaveURL(/buymeacoffee\.com\/breizhblok/);
+});
