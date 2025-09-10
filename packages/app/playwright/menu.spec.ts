@@ -21,6 +21,22 @@ test.describe('test mobile menu', () => {
     })
 
     test(`
+        Given the menu is opened,
+        When I click on the logo,
+        Then menu is closed
+        `, async ({ page }) => {
+        await page.goto("/");
+
+        await page.click('button[aria-controls=navbar]')
+
+        await expect(page.getByLabel("Sélectionner votre langage")).toBeVisible()
+
+        await page.getByAltText('Logo Application Breizh Blok').click()
+
+        await expect(page.getByLabel("Sélectionner votre langage")).not.toBeVisible()
+    })
+
+    test(`
         Given the menu is opened and I click on Contact page,
         Then menu is closed
         And I go to contact page
