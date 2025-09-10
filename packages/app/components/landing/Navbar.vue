@@ -7,8 +7,8 @@
             height="60" />
         </NuxtLink>
 
-        <div class="w-full md:hidden bg-white" id="navbar"
-          :class="isMenuOpened ? 'absolute top-20 left-4 right-4' : 'hidden'">
+        <div class="w-full bg-white" id="navbar" :class="isMenuOpened ? 'absolute top-20 left-4 right-4' : 'hidden'"
+          v-if="!isLargeScreen">
           <ul
             class="pb-3 font-medium mt-4 rounded-lg bg-gray-50 space-x-8 rtl:space-x-reverse flex-row mt-0 border-0 bg-transparent items-center"
             :class="isMenuOpened ? '' : 'flex flex-col'">
@@ -31,7 +31,7 @@
 
         </div>
 
-        <div class="hidden w-full md:block md:w-auto bg-white" id="navbar">
+        <div class="block w-auto bg-white" id="navbar" v-else>
           <ul
             class="pb-3 font-medium flex flex-col mt-4 rounded-lg bg-gray-50 space-x-8 rtl:space-x-reverse flex-row mt-0 border-0 bg-transparent items-center">
             <li>
@@ -53,7 +53,7 @@
 
         </div>
 
-        <button type="button"
+        <button v-if="!isLargeScreen" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar" :aria-expanded="isMenuOpened" @click="isMenuOpened = !isMenuOpened">
           <span class="sr-only">{{ isMenuOpened ? $t('closeMenu') : $t('openMenu') }}</span>
@@ -73,7 +73,11 @@
 </template>
 
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
+
 const localePath = useLocalePath();
 
 const isMenuOpened = ref(false)
+
+const isLargeScreen = useMediaQuery('(min-width: 48rem)')
 </script>
