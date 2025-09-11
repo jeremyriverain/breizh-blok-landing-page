@@ -1,19 +1,19 @@
 <script setup>
 definePageMeta({
-  layout: "landing",
-});
+  layout: 'landing',
+})
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 useHead({
-  title: `${t("contact")} - Breizh Blok`,
+  title: `${t('contact')} - Breizh Blok`,
   meta: [
     {
-      name: "description",
-      content: t("contactUs"),
+      name: 'description',
+      content: t('contactUs'),
     },
   ],
-});
+})
 </script>
 
 <template>

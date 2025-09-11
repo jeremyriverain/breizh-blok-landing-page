@@ -4,7 +4,9 @@
       {{ icon }}
     </div>
     <div>
-      <h2 class="font-semibold text-lg">{{ title }}</h2>
+      <h2 class="font-semibold text-lg">
+        {{ title }}
+      </h2>
       <p class="text-slate-500 mt-2 leading-relaxed">
         {{ description }}
       </p>
@@ -26,5 +28,5 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
 </script>
