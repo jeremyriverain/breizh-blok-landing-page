@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css", "nprogress/nprogress.css"],
   vite: {
-        plugins: [tailwindcss()],
+    plugins: [tailwindcss()],
   },
   routeRules: {
     "/boulders/**": { redirect: { to: "/", statusCode: 301 } },
@@ -19,9 +19,14 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/devtools", "@nuxtjs/i18n"],
+  modules: ["@nuxt/devtools", "@nuxtjs/i18n", "@nuxt/eslint"],
   compatibilityDate: "2024-07-31",
 
+  eslint: {
+    config: {
+      stylistic: true
+    }
+  },
   i18n: {
     locales: [
       {
