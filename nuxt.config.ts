@@ -1,16 +1,19 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  modules: ['@nuxt/devtools', '@nuxtjs/i18n', '@nuxt/eslint'],
   devtools: { enabled: true },
-  css: ["~/assets/css/main.css", "nprogress/nprogress.css"],
-  vite: {
-        plugins: [tailwindcss()],
-  },
+  css: ['~/assets/css/main.css', 'nprogress/nprogress.css'],
   routeRules: {
-    "/boulders/**": { redirect: { to: "/", statusCode: 301 } },
-    "/boulder-areas/**": { redirect: { to: "/", statusCode: 301 } },
-    "/municipalities/**": { redirect: { to: "/", statusCode: 301 } },
+    '/boulders/**': { redirect: { to: '/', statusCode: 301 } },
+    '/boulder-areas/**': { redirect: { to: '/', statusCode: 301 } },
+    '/municipalities/**': { redirect: { to: '/', statusCode: 301 } },
+  },
+  compatibilityDate: '2024-07-31',
+  vite: {
+    plugins: [tailwindcss()],
   },
 
   postcss: {
@@ -19,26 +22,28 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/devtools", "@nuxtjs/i18n"],
-  compatibilityDate: "2024-07-31",
-
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
   i18n: {
     locales: [
       {
-        code: "en",
-        language: "en-US",
-        name: "🇬🇧 EN",
-        file: "en.ts",
+        code: 'en',
+        language: 'en-US',
+        name: '🇬🇧 EN',
+        file: 'en.ts',
       },
       {
-        code: "fr",
-        language: "fr-FR",
-        name: "🇫🇷 FR",
-        file: "fr.ts",
+        code: 'fr',
+        language: 'fr-FR',
+        name: '🇫🇷 FR',
+        file: 'fr.ts',
       },
     ],
-    defaultLocale: "fr",
-    baseUrl: "https://breizh-blok.fr",
+    defaultLocale: 'fr',
+    baseUrl: 'https://breizh-blok.fr',
     detectBrowserLanguage: false,
   },
-});
+})
