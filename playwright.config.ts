@@ -26,7 +26,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'PORT=9876 HOST=localhost pnpm --filter app preview',
+    command: 'PORT=9876 HOST=localhost pnpm preview',
     port: 9876,
   },
 })

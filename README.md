@@ -37,6 +37,7 @@ pnpm preview
 ## Run tests
 
 ```bash
-pnpm --filter app exec playwright install --with-deps chromium
-pnpm --filter app run test
+pnpm generate
+pnpm exec playwright install --with-deps chromium
+pnpm test
 ```
