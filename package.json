@@ -23,7 +23,7 @@
     "@types/nprogress": "^0.2.3",
     "@vueuse/core": "^14.1.0",
     "autoprefixer": "^10.4.23",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "nprogress": "^0.2.0",
     "nuxt": "^4.2.2",
     "postcss": "^8.5.6",
